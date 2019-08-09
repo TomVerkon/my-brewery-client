@@ -30,6 +30,14 @@ public class BreweryClient {
 		return restTemplate.postForLocation(apihost + BEER_PATH_V1, beerDto);
 	}
 
+	public void updateBeer(UUID beerId, BeerDto beerDto) {
+		restTemplate.put(apihost + BEER_PATH_V1 + beerId.toString(), beerDto);
+	}
+	
+	public void deleteBeer(UUID beerId) {
+		restTemplate.delete(apihost + BEER_PATH_V1 + beerId.toString());
+	}
+
 	public String getApiHost() {
 		return apihost;
 	}
