@@ -30,7 +30,7 @@ class BreweryClientTest {
 	}
 	
 	@Test
-	void saveNewBeer() {
+	void testSaveNewBeer() {
 		BeerDto beerDto = BeerDto.builder().beerName("New Beer").build();
 		URI uri = client.saveNewBeer(beerDto);
 		assertNotNull(uri);
@@ -38,14 +38,14 @@ class BreweryClientTest {
 	}
 	
 	@Test
-	void  updateBeer() {
+	void  testUpdateBeer() {
 		UUID beerId = UUID.randomUUID();
 		BeerDto beerDto = BeerDto.builder().id(beerId).beerName("updated beer name").build();
 		client.updateBeer(beerId, beerDto);
 	}
 	
 	@Test
-	void deleteBeer() {
+	void testDeleteBeer() {
 		client.deleteBeer(UUID.randomUUID());
 	}
 

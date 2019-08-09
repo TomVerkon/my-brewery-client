@@ -13,39 +13,37 @@ import com.digits.mybreweryclient.web.model.BeerDto;
 @Component
 @ConfigurationProperties(value = "my.brewery", ignoreUnknownFields = false)
 public class BreweryClient {
-	
-	public final String BEER_PATH_V1 = "/api/v1/beer/";
-	private String apihost;
-	private final RestTemplate restTemplate;
-	
-	public BreweryClient(RestTemplateBuilder restTemplateBuilder) {
-		this.restTemplate = restTemplateBuilder.build();
-	}
-	
-	public BeerDto getBeerById(UUID beerId) {
-		return restTemplate.getForObject(apihost + BEER_PATH_V1 + beerId.toString(), BeerDto.class);
-	}
-	
-	public URI saveNewBeer(BeerDto beerDto) {
-		return restTemplate.postForLocation(apihost + BEER_PATH_V1, beerDto);
-	}
 
-	public void updateBeer(UUID beerId, BeerDto beerDto) {
-		restTemplate.put(apihost + BEER_PATH_V1 + beerId.toString(), beerDto);
-	}
-	
-	public void deleteBeer(UUID beerId) {
-		restTemplate.delete(apihost + BEER_PATH_V1 + beerId.toString());
-	}
+    public final String BEER_PATH_V1 = "/api/v1/beer/";
+    private String apihost;
+    private final RestTemplate restTemplate;
 
-	public String getApiHost() {
-		return apihost;
-	}
+    public BreweryClient(RestTemplateBuilder restTemplateBuilder) {
+	this.restTemplate = restTemplateBuilder.build();
+    }
 
-	public void setApiHost(String apihost) {
-		this.apihost = apihost;
-	}
-	
-	
+    public BeerDto getBeerById(UUID beerId) {
+	return restTemplate.getForObject(apihost + BEER_PATH_V1 + beerId.toString(), BeerDto.class);
+    }
+
+    public URI saveNewBeer(BeerDto beerDto) {
+	return restTemplate.postForLocation(apihost + BEER_PATH_V1, beerDto);
+    }
+
+    public void updateBeer(UUID beerId, BeerDto beerDto) {
+	restTemplate.put(apihost + BEER_PATH_V1 + beerId.toString(), beerDto);
+    }
+
+    public void deleteBeer(UUID beerId) {
+	restTemplate.delete(apihost + BEER_PATH_V1 + beerId.toString());
+    }
+
+    public String getApiHost() {
+	return apihost;
+    }
+
+    public void setApiHost(String apihost) {
+	this.apihost = apihost;
+    }
 
 }
