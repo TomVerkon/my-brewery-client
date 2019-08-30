@@ -37,11 +37,11 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
+		<!-- dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
 			<version>${mapstruct.version}</version>
-		</dependency>
+		</dependency-->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpasyncclient</artifactId>
@@ -96,7 +96,7 @@
 				<version>3.0.0-M3</version><!--$NO-MVN-MAN-VER$ -->
 			</plugin>
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
-			<plugin>
+			<!-- plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -114,7 +114,7 @@
 					</annotationProcessorPaths>
 					<compilerArgs><compilerArg>-Amapstruct.defaultComponentModel=spring</compilerArg></compilerArgs>
 				</configuration>
-			</plugin>
+			</plugin -->
 			<!-- require maven 3.60 or higher, require Java 11 or higher -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
