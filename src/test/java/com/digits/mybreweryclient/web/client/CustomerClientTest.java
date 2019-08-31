@@ -35,7 +35,7 @@ class CustomerClientTest {
     @Test
     void testUpdateCustomer() {
 	UUID customerId = UUID.randomUUID();
-	CustomerDto customerDto = CustomerDto.builder().id(customerId).customerName("updated customer name").build();
+	CustomerDto customerDto = CustomerDto.builder().customerName("updated customer name").build();
 	client.updateCustomer(customerId, customerDto);
     }
 
