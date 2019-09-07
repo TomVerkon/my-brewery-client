@@ -34,7 +34,7 @@ class BreweryClientTest {
     @Test
     void testSaveNewBeer() {
 	BeerDto beerDto = BeerDto.builder().beerName("New Beer").beerStyle(BeerStyleEnum.LAGER)
-		.price(new BigDecimal("3.99")).upc(Long.MAX_VALUE).build();
+		.price(new BigDecimal("3.99")).upc("123456666654321").build();
 	// BeerDto beerDto = BeerDto.builder().build();
 	URI uri = client.saveNewBeer(beerDto);
 	assertNotNull(uri);
@@ -45,7 +45,7 @@ class BreweryClientTest {
     void testUpdateBeer() {
 	UUID beerId = UUID.randomUUID();
 	BeerDto beerDto = BeerDto.builder().id(beerId).beerName("updated beer name").beerStyle(BeerStyleEnum.LAGER)
-		.price(new BigDecimal("3.99")).upc(Long.MAX_VALUE).build();
+		.price(new BigDecimal("3.99")).upc("098765431").build();
 	client.updateBeer(beerId, beerDto);
     }
 
@@ -53,5 +53,10 @@ class BreweryClientTest {
     void testDeleteBeer() {
 	client.deleteBeer(UUID.randomUUID());
     }
+    
+//    @Test
+//    void getAllBeers() {
+//	client
+//    }
 
 }

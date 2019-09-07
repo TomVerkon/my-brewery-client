@@ -20,32 +20,31 @@ import lombok.NoArgsConstructor;
 @Builder
 public class BeerDto {
 
-    @Null(message = "id must be null")
+    @Null
     private UUID id;
 
-    @NotBlank(message = "The beerName can not be blank")
+    @NotBlank
     private String beerName;
 
-    @NotNull(message = "You must assign a beer style")
+    @NotNull
     private BeerStyleEnum beerStyle;
 
     @NotNull
-    @Positive(message = "upc must be greater than 0")
-    private Long upc;
+    private String upc;
 
     private Integer quantityOnHand;
 
     @NotNull
-    @Positive(message = "price must be greater than 0")
+    @Positive
     private BigDecimal price;
 
-    @Null(message = "version must be null")
+    @Null
     private Integer version;
 
-    @Null(message = "createDate must be null")
+    @Null
     private OffsetDateTime createdDate;
 
-    @Null(message = "lastModifiedDate must be null")
+    @Null
     private OffsetDateTime lastModifiedDate;
 
 }
